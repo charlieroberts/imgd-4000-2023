@@ -1,8 +1,8 @@
 # IMGD 4000, Technical Game Development II - Spring 2023
 
-Instructor: Charlie Roberts
-SA: Yihong Xu
-Also Starring: Ralph Sutter (IMGD 4500) and Kirsten Roethel (IMGD 4500 SA)
+Instructor: Charlie Roberts  
+SA: Yihong Xu  
+Also Starring: Ralph Sutter (IMGD 4500) and Kirsten Roethel (IMGD 4500 SA)  
 Course Times: Mondays and Thursdays 12-2:50 (lecture, online), Wednesdays 2-3:50 (lab, FL 222)
 
 IMGD 4000 will explore concepts related to technical development using game engines. Game engines are used in a wide range of fields including games, simulations, and architecture, and are an important part of any developer's toolbox, regardles of whether or not a developer is working on a "game". 
