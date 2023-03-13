@@ -134,11 +134,12 @@ void UActorCollideComponent::OnActorHit(UPrimitiveComponent* HitComponent, AActo
 
 7. Back in UE5, make sure both the rolling sphere and your cube are generating hit messages. You can find this in Details > Collisions > Simulation Generates Hit Events.
 
-8. Hit Compile
+8. If you're using VS Code for your code editing, in UE5 select `Tools > Refresh Visual Studio Code Project` to setup the build information. Then is VS Code, select `Terminal > Run Build Task` and the choose the `DebugGame Build` option from the resulting dropdown menu. This will compile your files and hot load them into the Unreal Editor.
+
 9. Hit Play
 10. Celebrate???
 
-### Your light speed tour of UE4 comes to an end
-OK, that was actually quite a lot. We create some lights, added some meshes, turned on physics, edited a material in Blueprints, generated a C++ component, and got a basic hit test to work. There’s a chance we didn’t get all the way through this on the first day of class… if so we’ll finish up tomorrow.
+### Your light speed tour of UE5 comes to an end
+OK, that was actually quite a lot. We created some lights, added some meshes, loaded a plugin, turned on physics, edited a material in Blueprints, generated a C++ component, and got a basic hit test to work. There’s a chance we didn’t get all the way through this on the first day of class… if so we’ll finish up tomorrow.
 
 If you were watching but not following along, part of your homework tonight is to explicitly go and work through this on your own.
