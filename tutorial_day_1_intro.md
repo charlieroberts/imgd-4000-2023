@@ -30,9 +30,9 @@ Levels consist of meshes, lighting, blueprints, and other assets working in tand
 view a pane for placing these on the stage. 
 Let’s start by adding a simple Plane Mesh to our level to serve as the "ground". Choose Place Actor > Shapes > Plane and drag it out into the level. 
 In the Details view that appears on the right (beneath the World Outliner) go ahead and set Transform > Location to be 0,0,0 
-and set Transform > Scale to be 150, 150, .1. 
+and set Transform > Scale to be 5,5,5. 
 
-OK, we have a mesh that serves as a “ground”, but there are currently no lights in our level. As a result, if you hit the “Play” button, you won’t see anything appear. To correct this, drag Lights > Directional Light out and above our ground mesh. You should see a warning that the lights need to be “rebuilt”; this is basically a shader compilation / code generation step. Go ahead and hit “Build”. When the lighting is built hit "Play” and you should now see your mesh illuminated.
+OK, we have a mesh that serves as a “ground”, but there are currently no lights in our level. As a result, if you hit the “Play” button, you won’t see anything appear. To correct this, drag Place Actor > Lights > Directional Light out and above our ground mesh. You should see a warning that the lights need to be “rebuilt”; this is basically a shader compilation / code generation step. Go ahead and hit `Build > Build All Lighting`. When the lighting is built hit "Play” and you should now see your mesh illuminated.
 
 Doesn’t look so great at the moment, does it? We can change things a bit by playing around with controls for the light found in the contextual “Details” view, such as the light intensity (try lowering this significantly, to around 3.) and the light color. Still a bit boring, right?
 
@@ -44,26 +44,26 @@ Select our ground mesh, and then click on the dropdown in Details > Material tha
 ### Editing a material with Blueprints
 OK, let’s add a new mesh to the scene, and then edit its material to change itss color.
 
-1. Add a Basic > Sphere mesh to your scene.
-2. Set the sphere’s Transform > Scale to be 15,15,15,
-3. Set the sphere’s Transform > Location to be 0,0,2000
+1. Add a Place Actor > Shapes > Sphere mesh to your scene.
+3. Set the sphere’s Transform > Location to be 0,0,75 (the z-axis is correlated with "height" in Unreal, sigh...)
 
-You’ll note that the sphere doesn’t currently have much color, due to its default material and the current lights in the scene. Let’s create and edit a new material for the sphere.
+You’ll note that the sphere doesn’t currently have much color, due to its default material and the current lights in the scene (it might be reflecting some color from the plane material). Let’s create and edit a new material for the sphere.
 
-1. With the sphere, selected click on the dropdown in the Details > Materials and select Create New Asset > Material.
-2. This will launch Blueprints, the visual programming environment for Unreal. You will currently see one node, which contains the default parameters for a material. We will feed a couple of new values to this node.
-3. Right-click on the blueprint. This will bring up a node creation menu where you can select from all the various blueprints nodes. Type “VectorParameter” to enter it into the search field and then hit enter when the “VectorParameter” node is selected. Name the new node “Color”.
-4. Drag the topmost output of the new VectorParameter node to the “Base Color” input of our material. Click on the color editor to choose a new color.
-5. Right-click on the blueprint and create a new ScalarParameter node, and name it “Metallic”. Connect its output to “Metallic” input of our material.  Set the default for the parameter to be 1. 
-6. Last but not least, we need to “Apply” the changes in our Blueprint (later we’ll learn how to change material parameters on-the-fly). Click the apply button and go back to the main editing window.
-7. You should see some changes to the sphere. If not, try playing with the intensity of your directional light and its z-positioning (make sure it’s above your sphere).
+1. Let's view our Content Browser. Choose Window > Content Browser 1. 
+2. Click the "+ Add" button and select "Material". Give the material a name and double click it in the content browser.
+3. This will launch Blueprints, the visual programming environment for Unreal. You will currently see one node, which contains the default parameters for a material. We will feed a couple of new values to this node.
+4. Right-click on the blueprint. This will bring up a node creation menu where you can select from all the various blueprints nodes. Type “VectorParameter” to enter it into the search field and then hit enter when the “VectorParameter” node is selected. Name the new node “Color”.
+5. Drag the topmost output of the new VectorParameter node to the “Base Color” input of our material. Click on the color editor to choose a new color.
+6. Right-click on the blueprint and create a new ScalarParameter node, and name it “Metallic”. Connect its output to “Metallic” input of our material.  Set the default for the parameter to be 1. 
+7. Save the material by hitting the disk icon in the upper left corner of the blueprints window or hitting Ctrl/Cmd+S. Close the Blueprints window.
+8. Select your sphere and apply the new material... it will now appear in the Material dropdown for the Mesh component. You should see changes! If not, try playing with the intensity of your directional light and its z-positioning (make sure it’s above your sphere).
 
 *IMPORTANT* You can focus the camera on any object in your scene by selecting it in the World Outliner view and hitting the F key. This is the bestest shortcut to remember in UE.
 
 OK, that’s a basic introduction to playing around in Blueprints. 
 
 ### Adding a plugin
-Let’s create a beautiful sunrise for our scene, because all our scenes should have beautiful sunrises. This will also give us a chance to see how plugins work. Before we get install the plugin, we need to save the project and our current level. Press the “Save Current” button in the main toolbar, and give your level a name. Then choose File > Save All just to make sure all our project details are saved. 
+Let’s create a beautiful sunrise for our scene, because all our scenes should have beautiful sunrises. This will also give us a chance to see how plugins work. Before we get install the plugin, we need to save the project and our current level. Press the “Save Current” button in the main toolbar (disk icon in upper left corner), and give your level a name if you haven't already. Then choose File > Save All just to make sure all our project details are saved. 
 
 Here’s a link to the tutorial on [Geographically Accurate Sun Positioning | Unreal Engine Documentation](https://docs.unrealengine.com/en-US/Engine/Rendering/LightingAndShadows/SunPositioner/index.html) . Complete the first three steps, the last of which will require you to restart the Unity editor. Instead of continuing, follow the steps below (although feel free to come back to this tutorial and experiment later).
 
@@ -72,7 +72,7 @@ In your Editor Modes panel, drag Lights > Sun and Sky into your level. This will
 ### Adding some physics
 It doesn’t get much easier than this. Select our sphere (which should currently be positioned above our ground). In Details > Physics, check the “Simulate Physics” option and make sure “Enable Gravity” is checked as well. Hit Play.
 
-You should see your sphere fall to the ground and then stop. We can get more interesting movement by slanting the ground. Select your ground mesh, and then set its Transform > Rotation > Y to be 200 degrees. Try hitting play again… we now have a rolling ball.
+You should see your sphere fall to the ground and then stop. We can get more interesting movement by slanting the ground. Select your ground mesh, and then set its Transform > Rotation > Y to be 10 degrees. Try hitting play again… we now have a rolling ball.
 
 Let’s add an obstacle. Drag out a Basic > Cube mesh from our placement menu. Position and scale it so that it becomes an obstacle for the rolling movement of our sphere; keep testing until the sphere actually strikes the cube.
 
@@ -132,7 +132,7 @@ void UActorCollideComponent::OnActorHit(UPrimitiveComponent* HitComponent, AActo
 }
 ```
 
-7. Back in UE4, make sure both the rolling sphere and your cube are generating hit messages. You can find this in Details > Collisions > Simulation Generates Hit Events.
+7. Back in UE5, make sure both the rolling sphere and your cube are generating hit messages. You can find this in Details > Collisions > Simulation Generates Hit Events.
 
 8. Hit Compile
 9. Hit Play
