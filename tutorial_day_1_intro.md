@@ -63,26 +63,26 @@ You’ll note that the sphere doesn’t currently have much color, due to its de
 OK, that’s a basic introduction to playing around in Blueprints. 
 
 ### Adding a plugin
-Let’s create a beautiful sunrise for our scene, because all our scenes should have beautiful sunrises. This will also give us a chance to see how plugins work. Before we get install the plugin, we need to save the project and our current level. Press the “Save Current” button in the main toolbar (disk icon in upper left corner), and give your level a name if you haven't already. Then choose File > Save All just to make sure all our project details are saved. 
+Let’s create a beautiful sunrise for our scene, because all our scenes should have beautiful sunrises. This will also give us a chance to see how plugins work. Before we get install the plugin, we need to save the project and our current level as the editor will have to restart once the plugin has loaded. Press the `Save Current` button in the main toolbar (disk icon in upper left corner), and give your level a name if you haven't already. Then choose `File > Save All` just to make sure all our project details are saved. 
 
-Here’s a link to the tutorial on [Geographically Accurate Sun Positioning | Unreal Engine Documentation](https://docs.unrealengine.com/en-US/Engine/Rendering/LightingAndShadows/SunPositioner/index.html) . Complete the first three steps, the last of which will require you to restart the Unity editor. Instead of continuing, follow the steps below (although feel free to come back to this tutorial and experiment later).
+Here’s a link to the tutorial on [Geographically Accurate Sun Positioning | Unreal Engine Documentation](https://docs.unrealengine.com/en-US/Engine/Rendering/LightingAndShadows/SunPositioner/index.html). Complete the first three steps, the last of which will require you to restart the Unreal editor. Instead of continuing, follow the steps below (although feel free to come back to this tutorial and experiment later).
 
-In your Editor Modes panel, drag Lights > Sun and Sky into your level. This will blow out your scene with white light, but if you select the SunSky in your World Outliner you’ll be able to to change the current time of day under Details > Time > Solar Time. Set the value to be 6 (for 6AM). Now you should have a nice sunrise.
+In your Editor Modes panel, drag `Lights > Sun and Sky` into your level. This will blow out your scene with white light, but if you select the SunSky in your World Outliner you’ll be able to to change the current time of day under `Details > Time > Solar Time`. Set the value to be 6 (for 6AM). Now you should have a nice sunrise.
 
 ### Adding some physics
-It doesn’t get much easier than this. Select our sphere (which should currently be positioned above our ground). In Details > Physics, check the “Simulate Physics” option and make sure “Enable Gravity” is checked as well. Hit Play.
+It doesn’t get much easier than this. Select our sphere (which should currently be positioned above our ground). In `Details > Physics`, check the `Simulate Physics` option and make sure `Enable Gravity` is checked as well. Hit `Play`.
 
-You should see your sphere fall to the ground and then stop. We can get more interesting movement by slanting the ground. Select your ground mesh, and then set its Transform > Rotation > Y to be 10 degrees. Try hitting play again… we now have a rolling ball.
+You should see your sphere fall to the ground and then stop. We can get more interesting movement by slanting the ground. Select your ground mesh, and then set its `Transform > Rotation > Y` to be `10` degrees. Try hitting play again… we now have a rolling ball.
 
-Let’s add an obstacle. Drag out a Basic > Cube mesh from our placement menu. Position and scale it so that it becomes an obstacle for the rolling movement of our sphere; keep testing until the sphere actually strikes the cube.
+Let’s add an obstacle. Drag out a `Basic > Cube` mesh from our placement menu. Position and scale it so that it becomes an obstacle for the rolling movement of our sphere; keep testing until the sphere actually strikes the cube.
 
 ### Writing some code
-Let’s quickly add a hit test for when our cube is struck.
+Let’s quickly add a hit test for when our cube is struck that will log a message to our output window.
 1. Select the cube in the editor
-2. In Details, select “+ Add Component”
-3. Choose the Actor Component, and name the new component “ActorCollideComponent”
-4. Right-click the new component and select C++ > Open ActorCollideComponent.h
-5. We need to paste a signature for our hit test into the header file. Add the following under the first `public` section of the class definition:
+2. In Details, select `+ Add Component`
+3. Choose the `Actor Component`, and name the new component "ActorCollideComponent"
+4. Right-click the new component and select `C++ > Open ActorCollideComponent.h`
+5. We need to paste a signature for our hit test into the header file. Add the following under the first `public` section of the class definition... we just want the `UFUNCTION()` line and the `OnActorHit` function signature directly beneath it:
 ```c++
 public: 
 	// Sets default values for this component's properties
@@ -132,9 +132,9 @@ void UActorCollideComponent::OnActorHit(UPrimitiveComponent* HitComponent, AActo
 }
 ```
 
-7. Back in UE5, make sure both the rolling sphere and your cube are generating hit messages. You can find this in Details > Collisions > Simulation Generates Hit Events.
+7. Back in UE5, make sure both the rolling sphere and your cube are generating hit messages. You can find this in `Details > Collisions > Simulation Generates Hit Events`.
 
-8. If you're using VS Code for your code editing, in UE5 select `Tools > Refresh Visual Studio Code Project` to setup the build information. Then is VS Code, select `Terminal > Run Build Task` and the choose the `DebugGame Build` option from the resulting dropdown menu. This will compile your files and hot load them into the Unreal Editor.
+8. If you're using VS Code for your code editing, in UE5 select `Tools > Refresh Visual Studio Code Project` to setup the build information. Then in VS Code, select `Terminal > Run Build Task` and the choose the `DebugGame Build` option from the resulting dropdown menu. This will compile your files and hot load them into the Unreal Editor.
 
 9. Hit Play
 10. Celebrate???
