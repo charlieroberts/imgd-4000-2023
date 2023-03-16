@@ -33,7 +33,7 @@ For the additional assignments in this class, you must complete at least one of 
 If you'd like to focus on C++ in Unreal, completing both programming assignments is great! More information about these individual options will be given as the course progresses.
 
 ### Final Group Project (70% Total)
-Initial Design Document - 5%  
+[Initial Design Treatment Document](./treatment_document.md) - 5%  
 Website for project - 15%  
 Alpha Presentation - 20%  
 [Beta Presentation](https://github.com/imgd-4000-2021/syllabus_and_notes/blob/main/beta.md) - 30%  
