@@ -175,5 +175,5 @@ void ASpherePawn::Fire() {
 	a->Speed = ProjectileSpeed;
 }
 ```
-
-4. Compile and Play. You should be able to fire via the spacebar now.  You can also adjust the speed of the projectiles using the `SpherePawn` details view in UE4.
+5. In your SpherePawn implementation file, make sure to include "ProjectileActor.h" so that the class can call its methods.
+6. Compile and Play. You should be able to fire via the spacebar now.  You can also adjust the speed of the projectiles using the `SpherePawn` details view in UE5.
