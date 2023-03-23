@@ -1,4 +1,4 @@
-# Goal
+# Accessing C++ from Blueprints
 Today we will add two features to our project from last class. Both will take advantage of Blueprints, and part of the goal of this class is to spend a bit more time in the various environments Blueprints gives us while also connecting 
 Blueprints to C++.
 
