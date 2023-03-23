@@ -15,6 +15,6 @@ But the first link in this assignment is perhaps the easiest to follow, with cle
 5. DM me the repo link in Slack by the last day of class.
 
 ## Grading
-60% : Are the three basic rules of boids implemented correctly (20% for each rule)
-20% : implement one of the tweaks (your choice) described at the [algorithm overview](http://www.kfish.org/boids/pseudocode.html
-20% : correctly followed instructions (posted video, made GitHub repo etc.)
+60% : Are the three basic rules of boids implemented correctly (20% for each rule)  
+20% : implement one of the tweaks (your choice) described at the [algorithm overview](http://www.kfish.org/boids/pseudocode.html)  
+20% : correctly followed instructions (posted video, made GitHub repo etc.)  
