@@ -35,7 +35,7 @@ If you'd like to focus on C++ in Unreal, completing both programming assignments
 ### Final Group Project (70% Total)
 [Initial Design Treatment Document](./treatment_document.md) DUE MARCH 19th - 5%  
 Website for project - 15%  
-Alpha Presentation - 20%  
+Alpha Presentation DUE APRIL 12th - 20%  
 [Beta Presentation](https://github.com/imgd-4000-2021/syllabus_and_notes/blob/main/beta.md) - 30%  
 
 ## Final Project
