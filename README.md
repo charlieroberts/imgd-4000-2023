@@ -27,7 +27,7 @@ For the additional assignments in this class, you must complete at least one of 
 
 - Assignment 1: Agent-based simulation - 15%
 - Assignment 2: Pathfinding - 15%
-- Final Project Portfolio - 15%
+- [Final Project Portfolio](./development_portfolio.md) - 15%
 - In-class tutorial - 15%
 
 If you'd like to focus on C++ in Unreal, completing both programming assignments is great! More information about these individual options will be given as the course progresses.
