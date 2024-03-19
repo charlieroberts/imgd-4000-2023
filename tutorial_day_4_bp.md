@@ -54,7 +54,7 @@ The root component of our cube will typically (but not necessarily) be a StaticM
 ```c++
 void ASpherePawn::HitSomething_Implementation(class UStaticMeshComponent *meshThatWasHit ) {
 	HitSomething(meshThatWasHit);
-	UE_LOG(LogTemp, Warning, TEXT(“HIT SOMETHING CALLED”));
+	UE_LOG(LogTemp, Warning, TEXT("HIT SOMETHING CALLED"));
 }
 ```
 
