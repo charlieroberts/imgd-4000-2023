@@ -60,7 +60,7 @@ void ASpherePawn::HitSomething_Implementation(class UStaticMeshComponent *meshTh
 
 Note that calling `HitSomething` (which we defined as a UFUNCTION with the BlueprintNativeEvent specifier) is what actually triggers the event in Blueprints. We have to include that call.
 
-Compile your C++ code and then move on to creating / editing a blueprint subclass of it.
+Compile your C++ code and then move on to creating / editing a blueprint subclass of it. DO NOT TEST IT AT THIS STAGE OR YOU WILL CRASH THE ENGINE.
 
 ### Into the Blueprint
 OK, so now we want to make a Blueprint “subclass” out of our `SpherePawn` C++ class, so that we can access the Blueprint event we created. 
